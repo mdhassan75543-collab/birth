@@ -1,304 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Happy Birthday</title>
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
-}
-
-body {
-    background: radial-gradient(circle at top, #1a1a2e, #000);
-    height: 100vh;
-    overflow: hidden;
-    color: white;
-    text-align: center;
-}
-
-/* ================= SCENES ================= */
-.scene {
-    position: absolute;
-    inset: 0;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-#scene1 { display: flex; }
-
-/* ================= 3D BUTTON ================= */
-.btn3d {
-    margin-top: 30px;
-    padding: 14px 36px;
-    font-size: 1.1rem;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    color: white;
-    background: linear-gradient(45deg,#ff5e99,#ff9966);
-    box-shadow:
-        0 8px 0 #c94c6a,
-        0 15px 25px rgba(0,0,0,.5);
-    transition: all .15s;
-}
-
-.btn3d:active {
-    transform: translateY(6px);
-    box-shadow:
-        0 2px 0 #c94c6a,
-        0 5px 10px rgba(0,0,0,.4);
-}
-
-/* ================= PROFESSIONAL GIFT BOX ================= */
-.gift-box {
-    width: 240px;
-    height: 200px;
-    position: relative;
-    perspective: 1000px;
-}
-
-.box {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(145deg, #b71c1c, #7f0000);
-    border-radius: 14px;
-    position: relative;
-    box-shadow:
-        inset 0 5px 10px rgba(255,255,255,.2),
-        0 30px 45px rgba(0,0,0,.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.gift-text {
-    position: relative;
-    z-index: 2;
-    font-size: 1.1rem;
-    letter-spacing: 2px;
-    color: #ffecec;
-    text-shadow: 0 2px 6px rgba(0,0,0,.9);
-}
-
-/* RIBBONS */
-.ribbon {
-    position: absolute;
-    background: linear-gradient(#ffd700,#e6b800);
-    box-shadow: inset 0 0 4px rgba(0,0,0,.4);
-}
-
-.ribbon.vertical {
-    width: 22px;
-    height: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.ribbon.horizontal {
-    height: 22px;
-    width: 100%;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-/* LID */
-.lid {
-    position: absolute;
-    width: 100%;
-    height: 70px;
-    background: linear-gradient(145deg,#d32f2f,#8e0000);
-    top: -70px;
-    border-radius: 14px 14px 0 0;
-    transform-origin: bottom;
-    transition: transform 1.4s ease;
-    box-shadow: 0 15px 30px rgba(0,0,0,.6);
-}
-
-/* BOW */
-.bow {
-    position: absolute;
-    top: -18px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 6px;
-}
-
-.bow span {
-    width: 28px;
-    height: 18px;
-    background: linear-gradient(#ffd700,#e6b800);
-    border-radius: 50% 50% 40% 40%;
-    box-shadow: inset 0 0 4px rgba(0,0,0,.4);
-}
-
-.gift-box.open .lid {
-    transform: rotateX(140deg);
-}
-
-/* ================= QUOTE ================= */
-#scene2 {
-    font-size: 2rem;
-    padding: 40px;
-    animation: fadeIn 2s forwards;
-}
-
-/* ================= NAME TYPING ================= */
-#scene3 h1 {
-    font-size: 4rem;
-    color: #ffb3e6;
-    text-shadow: 0 0 25px #ff5e99;
-}
-
-/* ================= FINAL SCENE ================= */
-#scene4 {
-    font-size: 1.6rem;
-    gap: 20px;
-}
-
-/* SLIDESHOW */
-.slideshow {
-    width: 300px;
-    height: 600px;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0,0,0,.7);
-    margin-bottom: 20px;
-}
-
-.slideshow img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    animation: fade 4s infinite;
-}
-
-@keyframes fade {
-    0% { opacity: 0; }
-    10% { opacity: 1; }
-    50% { opacity: 1; }
-    60% { opacity: 0; }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes glow {
-    from { text-shadow: 0 0 15px hotpink; }
-    to { text-shadow: 0 0 35px gold; }
-}
-</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>HASSAN SHAIKH | Portfolio</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- SCENE 1 -->
-<div class="scene" id="scene1">
-    <div class="gift-box" id="gift">
-        <div class="lid">
-            <div class="bow">
-                <span></span><span></span>
+<header>
+    <nav>
+        <h2 class="logo">HASSAN SHAIKH</h2>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Hi, I'm <span>HASSAN SHAIKH</span></h1>
+        <h2>CSE Student | Developer | Problem Solver</h2>
+        <p>Second-year Computer Science student passionate about building impactful software.</p>
+        <a href="#projects" class="btn">View Projects</a>
+    </div>
+</section>
+
+<section id="about" class="section">
+    <h2>About Me</h2>
+    <p>
+        I am a second-year Computer Science Engineering student with a strong interest in
+        web development, data structures, and software engineering. I enjoy learning new
+        technologies and building real-world projects.
+    </p>
+</section>
+
+<section id="skills" class="section">
+    <h2>Skills</h2>
+    <div class="skills-container">
+        <div class="skill">C</div>
+        <div class="skill">C++</div>
+        <div class="skill">Java</div>
+        <div class="skill">Python</div>
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">Git & GitHub</div>
+    </div>
+</section>
+
+<section id="projects" class="section">
+    <h2>Projects</h2>
+
+    <div class="projects-container">
+        <!-- Project Card -->
+        <div class="project-card">
+            <h3>BIRTHDAY WISHES</h3>
+            <p>
+                By using this code , you can make a professional , beautiful and unique birthday wishes.
+            </p>
+            <div class="project-links">
+                <a href="/birth/birthday/birthday.html" target="_blank">See Once</a>
+                <a href="#" target="_blank">Live Demo</a>
             </div>
         </div>
-        <div class="box">
-            <div class="ribbon vertical"></div>
-            <div class="ribbon horizontal"></div>
-            <span class="gift-text">OPEN THE GIFT</span>
+
+        <!-- Duplicate this div for more projects -->
+        <div class="project-card">
+            <h3>Project Title</h3>
+            <p>
+                Another project description. Keep it concise and impactful.
+            </p>
+            <div class="project-links">
+                <a href="#">GitHub</a>
+                <a href="#">Live Demo</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <h3>Project Title</h3>
+            <p>
+                Another project description. Keep it concise and impactful.
+            </p>
+            <div class="project-links">
+                <a href="#">GitHub</a>
+                <a href="#">Live Demo</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <h3>Project Title</h3>
+            <p>
+                Another project description. Keep it concise and impactful.
+            </p>
+            <div class="project-links">
+                <a href="#">GitHub</a>
+                <a href="#">Live Demo</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <h3>Project Title</h3>
+            <p>
+                Another project description. Keep it concise and impactful.
+            </p>
+            <div class="project-links">
+                <a href="#">GitHub</a>
+                <a href="#">Live Demo</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <h3>Project Title</h3>
+            <p>
+                Another project description. Keep it concise and impactful.
+            </p>
+            <div class="project-links">
+                <a href="#">GitHub</a>
+                <a href="#">Live Demo</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <h3>Project Title</h3>
+            <p>
+                Another project description. Keep it concise and impactful.
+            </p>
+            <div class="project-links">
+                <a href="#">GitHub</a>
+                <a href="#">Live Demo</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <h3>Project Title</h3>
+            <p>
+                Another project description. Keep it concise and impactful.
+            </p>
+            <div class="project-links">
+                <a href="#">GitHub</a>
+                <a href="#">Live Demo</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <h3>Project Title</h3>
+            <p>
+                Another project description. Keep it concise and impactful.
+            </p>
+            <div class="project-links">
+                <a href="#">GitHub</a>
+                <a href="#">Live Demo</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <h3>Project Title</h3>
+            <p>
+                Another project description. Keep it concise and impactful.
+            </p>
+            <div class="project-links">
+                <a href="#">GitHub</a>
+                <a href="#">Live Demo</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <h3>Project Title</h3>
+            <p>
+                Another project description. Keep it concise and impactful.
+            </p>
+            <div class="project-links">
+                <a href="#">GitHub</a>
+                <a href="#">Live Demo</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <h3>Project Title</h3>
+            <p>
+                Another project description. Keep it concise and impactful.
+            </p>
+            <div class="project-links">
+                <a href="#">GitHub</a>
+                <a href="#">Live Demo</a>
+            </div>
         </div>
     </div>
-    <button class="btn3d" onclick="openGift()">Open 🎁</button>
-</div>
+</section>
 
-<!-- SCENE 2 -->
-<div class="scene" id="scene2">
-    <p>
-        “Happy Birthday, sweetheart. Being with you is my favorite part of every day, and I wish you endless smiles and love today.” “You make my world brighter, my heart fuller, and my life happier. Happy Birthday to the one I adore.”
-    </p>
-    <button class="btn3d" onclick="nextScene()">Next ✨</button>
-</div>
+<section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Email: hassanshaikh77866.com</p>
+    <p>LinkedIn: linkedin.com/in/yourname</p>
+    <p>GitHub: github.com/yourusername</p>
+</section>
 
-<!-- SCENE 3 -->
-<div class="scene" id="scene3">
-    <h1 id="name"></h1>
-    <button class="btn3d" onclick="nextScene()">CLICK HERE NOW 🌹</button>
-</div>
+<footer>
+    <p>© 2026 Hassan Shaikh. All Rights Reserved.</p>
+</footer>
 
-<!-- SCENE 4 -->
-<div class="scene" id="scene4">
-    <div class="slideshow">
-        <img id="slide" src="photo1.jpg">
-    </div>
-
-    <p>
-        Happy Birthday to you! 🎉<br>
-        May this year bring you good health,<br>
-        endless happiness, success in everything you do,<br>
-        and beautiful moments to cherish forever.<br><br>
-        🌹 Wishing you a life full of love and blessings 🌹
-    </p>
-
-    <button class="btn3d" onclick="restart()">Restart 🔄</button>
-</div>
-
-<script>
-const scenes = document.querySelectorAll(".scene");
-let current = 0;
-
-function showScene(i) {
-    scenes.forEach(s => s.style.display = "none");
-    scenes[i].style.display = "flex";
-}
-showScene(current);
-
-/* 🎁 OPEN GIFT */
-function openGift() {
-    document.getElementById("gift").classList.add("open");
-    setTimeout(nextScene, 1600);
-}
-
-/* ▶ NEXT */
-function nextScene() {
-    current++;
-    showScene(current);
-    if (current === 2) typeName();
-    if (current === 3) startSlideshow();
-}
-
-/* 🔁 RESTART */
-function restart() {
-    location.reload();
-}
-
-/* ✍️ NAME TYPING */
-const nameText = "HAPPY BIRTHDAY ISHRAT";
-let index = 0;
-
-function typeName() {
-    const el = document.getElementById("name");
-    el.style.animation = "glow 2s infinite alternate";
-    const interval = setInterval(() => {
-        el.textContent += nameText[index];
-        index++;
-        if (index === nameText.length) clearInterval(interval);
-    }, 120);
-}
-
-/* 🖼️ SLIDESHOW */
-const photos = ["photo1.jpg","photo2.jpg","photo3.jpg","photo4.jpg"];
-let slideIndex = 0;
-
-function startSlideshow() {
-    setInterval(() => {
-        slideIndex = (slideIndex + 1) % photos.length;
-        document.getElementById("slide").src = photos[slideIndex];
-    }, 4000);
-}
-</script>
+<script src="script.js"></script>
 </body>
 </html>
